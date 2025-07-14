@@ -15,7 +15,7 @@
     };
 
 /* Function Keys */
-ZMK_LEADER_SEQUENCE(f13,        &kp F24,        W)  
+ZMK_LEADER_SEQUENCE(f24,        &kp F24,        W)  
 ZMK_LEADER_SEQUENCE(f23,        &kp F23,        L)  
 ZMK_LEADER_SEQUENCE(f22,        &kp F22,        P) 
 ZMK_LEADER_SEQUENCE(f21,        &kp F21,        S)  
