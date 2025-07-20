@@ -6,7 +6,7 @@
 
 
 #include "zmk-helpers/helper.h" // urob's helper repo
-#include "includes/totem.h" // catpucciano key definiton
+#include "zmk-helpers/totem.h" // catpucciano key definiton
 
 
 #define BASE  0
