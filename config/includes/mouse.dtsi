@@ -1,0 +1,15 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
+#include <dt-bindings/zmk/pointing.h>
+
+// mouse definitions
+#define MS_UP    &mmv MOVE_UP
+#define MS_LEFT  &mmv MOVE_LEFT
+#define MS_RIGHT &mmv MOVE_RIGHT
+#define MS_DOWN  &mmv MOVE_DOWN
+// scroll
+#define MS_SCRL  &msc SCRL_LEFT
+#define MS_SCRR  &msc SCRL_RIGHT
+#define MS_SCRU  &msc SCRL_UP
+#define MS_SCRD  &msc SCRL_DOWN
