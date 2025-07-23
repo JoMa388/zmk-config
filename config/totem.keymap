@@ -105,13 +105,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
+// Tap: comma | Shift + tap: colon | Ctrl + shift + tap: <.
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp COLON, &kp LESS_THAN)
 
-// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
+// Tap: dot | Shift + tap: semicolon | Ctrl + shift + tap: >.
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp SEMICOLON, &kp GREATER_THAN)
 
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
@@ -149,11 +149,11 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 ZMK_BASE_LAYER(Base,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp GRAVE      &kp W          &kp L          &kp P          &kp B        ,  &kp Z          &kp J          &kp K          &qexcl         NAV_BSPC     ,
+                   NAV_DEL        &kp W          &kp L          &kp P          &kp V        ,  &kp B          &kp U          &kp O          &kp Y          NAV_BSPC     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,  &comma_morph   &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮ 
-    &kp TAB        &kp Q          &kp X          &kp M          &kp D          &kp V        ,  &dot_morph     &kp U          &kp O          &kp Y          &kp F          &kp SQT   ,
+    &kp TAB        &kp Q          &kp X          &kp M          &kp D          &kp F        ,  &dot_morph     &kp J          &kp K          &qexcl         &kp SQT        &kp LG(E)    , 
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &kp ESC        &lt FN R       &lt NUM BSPC ,  &lt NAV SPACE  MAGIC_SHIFT    &kp ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯╰──────────────┴──────────────┴──────────────╯
@@ -161,11 +161,11 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            ___            ___            ___            ___          ,  ___            &kp C_VOL_DN   &kp C_VOL_UP   &kp C_MUTE     &kp C_PREV   ,
+                   ___            &kp BSLH       ___            &kp FSLH       &kp TILDE    ,  &kp Z          &kp C_VOL_DN   &kp C_VOL_UP   &kp C_MUTE     &kp C_PREV   ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-                    &sk LGUI       &sk LALT      &sk LCTRL      &sk LSHFT      ___          ,  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp C_NEXT   ,
+                    &kp EXCL      &kp AT         &kp HASH       &kp DLLR       &kp PRCNT    ,  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp C_NEXT   ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮ 
-    ___             ___            ___           ___            ___           ___           ,  NAV_START      &kp PG_DN      &kp PG_UP      NAV_END        &kp C_PP       NAV_DEL      ,
+    ___             &kp CARET     &kp AMPS       &kp STAR       &kp PIPE       &kp GRAVE    ,  NAV_START      &kp PG_DN      &kp PG_UP      NAV_END        &kp C_PP       NAV_DEL      ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            &mo SYS      ,  XXX            ___            ___
 //                                             ╰──────────────┴──────────────┴──────────────╯╰──────────────┴──────────────┴──────────────╯
@@ -173,11 +173,11 @@ ZMK_BASE_LAYER(Nav,
 
 ZMK_BASE_LAYER(Num,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            ___            &kp LS(TAB)    &swapper       ___          ,  ___            ___            ___            ___            ___          ,
+                   &kp EXCL       &kp AT         &kp LS(TAB)    &swapper       ___          ,  &kp UNDER      &kp PLUS       &kp LPAR       &kp RPAR       ___          ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-                   &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,  ___            &kp LBRC       &kp RBRC       ___            ___          ,
+                   &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,  &kp MINUS      &kp EQUAL      &kp LBRC       &kp RBRC       &kp DQT      ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮ 
-    &kp Z          &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,  &kp LT         &kp EQUAL      &kp GT         ___            ___            ___          ,
+    &kp ESC        &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,  &kp LT         &kp GT         &kp LBKT       &kpRBKT        &kp SQT        ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            &mo SYS      ,  XXX            ___            ___      
 //                                             ╰──────────────┴──────────────┴──────────────╯╰──────────────┴──────────────┴──────────────╯
