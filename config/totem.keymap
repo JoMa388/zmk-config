@@ -148,11 +148,11 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 ZMK_BASE_LAYER(Base,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp LA(SPACE)  &kp W          &kp L          &kp P          &kp B        ,         &dot_morph     &kp J          &kp K          &kp SQT        &kp LC(SPACE),
+                   &kp LA(SPACE)  &kp W          &kp L          &kp P          &kp B        ,         &kp SQT        &kp J          &kp K          &qexcl         &kp LC(SPACE),
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                   &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,         &comma_morph   &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
+                   &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,         &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-    &kp TAB        &kp Q          &kp X          &kp M          &kp D          &kp V        ,         &kp F          &kp U          &kp O          &kp Y          &qexcl         &kp LG(E)    ,
+    &kp TAB        &kp Q          &kp X          &kp M          &kp D          &kp V        ,         &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp LG(E)    ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &kp ESC        &lt FN R       &lt NUM BSPC ,         &lt NAV SPACE  MAGIC_SHIFT    &kp ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
