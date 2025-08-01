@@ -105,13 +105,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
+// Tap: comma | Shift + tap: colon | Ctrl + shift + tap: <.
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp COLON, &kp LESS_THAN)
 
-// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
+// Tap: dot | Shift + tap: semicolon | Ctrl + shift + tap: >.
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp SEMICOLON, &kp GREATER_THAN)
 
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
@@ -184,7 +184,7 @@ ZMK_BASE_LAYER(Num,
 )
 ZMK_BASE_LAYER(FN,
 //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-    &LG(X)         ___             ___            &kp LS(TAB)    &swapper      ___          ,         ___            ___            ___            ___            ___            ___          ,
+    &LG(X)         ___             ___            ___            __            ___          ,         ___            ___            ___            ___            ___            ___          ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
     &LG(C)         MEH1            MEH4           MEH5           MEH6          MEH0         ,         &kp F1         &kp F2         &kp F3         &kp F4         &kp F5         &kp F11      ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
