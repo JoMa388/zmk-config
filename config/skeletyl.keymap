@@ -48,7 +48,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 
 /* Combos, mouse emulation */
-/* #include "includes/combos.dtsi" */
+#include "includes/combos.dtsi"
 #include "includes/mouse.dtsi"
 #include "includes/leader.dtsi"
 
@@ -105,13 +105,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: comma | Shift + tap: colon | Ctrl + shift + tap: <.
+// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp COLON, &kp LESS_THAN)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
-// Tap: dot | Shift + tap: semicolon | Ctrl + shift + tap: >.
+// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp SEMICOLON, &kp GREATER_THAN)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
@@ -139,56 +139,57 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define MEH7 &kp LC(LS(LA(N7)))
 #define MEH8 &kp LC(LS(LA(N8)))
 #define MEH9 &kp LC(LS(LA(N9)))
-
+#define MEH_TAB &mt LS(LC(LALT)) TAB
+#define HYR_ENTER &mt LS(LC(LA(LGUI))) ENTER
 /* Keymap */
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
       ZMK_LAYER(name, LT RT LM RM LB RB LH RH)
 #endif
-
+            
 ZMK_BASE_LAYER(Base,
 //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-    &out OUT_TOG    &kp MINUS      &kp W          &kp L          &kp P          &kp B       ,         &kp UNDER      &kp J          &kp K          &qexcl         &kp Z          &kp DQT      ,
+    &out OUT_TOG    &kp MINUS      &kp W          &kp L         &kp P          &kp B       ,          &kp UNDER      &kp J          &kp K          &qexcl         &kp Z          &kpt DQT     ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-    &kp ESC         &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G       ,         &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H    &kp SQT      ,
+    &kp ESC         &hml LGUI C    &hml LALT S    &hml LCTRL N  &hml LSHFT T   &kp G       ,          &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H    &kp SQT      ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-    &kp LA(SPACE)   &kp Q          &kp X          &kp M          &kp D          &kp V       ,         &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp LC(SPACE),
+    &kp LA(SPACE)   &kp Q          &kp X          &kp M         &kp D          &kp V        ,         &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp LC(SPACE),
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                  &lt FN BSPC    &lt NUM R      &kp TAB     ,         &kp ENTER      &lt NAV SPACE  MAGIC_SHIFT    
+                                                  &lt FN BSPC    &lt NUM R     MEH_TAB      ,         HYR_ENTER      &lt NAV SPACE  MAGIC_SHIFT    
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
 )
 
 ZMK_BASE_LAYER(Nav,
 //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-     ___             ___          ___            ___            ___            ___          ,         &kp STAR       &kp MINUS      &kp EQUAL      &kp PLUS       ___            ___          ,
+     ___             ___          ___            ___            ___            ___          ,         &kp STAR       &kp MINUS      &kp EQUAL      &kp PLUS       &kp C_MUTE     &kp C_PREV   ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-     &kp F11       &kp F1         &kp F2         &kp F3         &kp F4         &kp F5       ,         &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp FSLH       &kp GRAVE    ,
+     &kp F11       &kp F1        &kp F2         &kp F3         &kp F4         &kp F5        ,         &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp C_VOL_UP   &kp C_PP     ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-     &kp F12       &kp F6         &kp F7         &kp F8         &kp F9         &kp F10      ,         &kp Z          &kp LT         &kp GT         &kp EQUAL      &kp BSLH       &kp TILDE    ,
+     &kp F12       &kp F6        &kp F7         &kp F8         &kp F9         &kp F10       ,         &kp Z          &kp LT         &kp GT         &kp EQUAL      &kp C_VOL_DN   &kp C_NEXT   ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                 ___            &mo SYS        ___          ,         ___            ___            ___
+                                                 ___            ___            &mo SYS      ,         ___            ___            ___
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
 )
 
 ZMK_BASE_LAYER(Num,
 //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-    &kp C_MUTE     &kp EXCL       &kp AT         &kp HASH       &kp DOLLAR     &kp PRCNT    ,         &kp CARET      ___            ___            ___            &kp C_MUTE      &kp C_NEXT  ,
+    ___            &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &kp PRCNT    ,         &kp CARET      ___            ___            ___            ___             ___         ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-    &kp LC(BSPC)   &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,         &kp AMPS       &kp LPAR       &kp LBRC       &kp LBKT       &kp C_VOL_UP    &kp C_PP    ,
+    &kp LC(BSCP)   &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,         &kp AMPS       &kp LPAR       &kp LBRC       &kp RBKT       &kp FLSH       &kp GRAVE    ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-    NAV_DEL        &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,         &kp PIPE       &kp RPAR       &kp RBRC       &kp RBKT       &kp C_VOL_DN    &kp C_PREV  ,
+    NAV_DEL        &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,         &kp PIPE       &kp RPAR       &kp RBRC       &kp RBKT       &KP BSLH       &kp TILDE    ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                 ___            ___            ___          ,         ___            &leader        ___ 
+                                                 ___            ___            ___          ,         ___            ___            ___ 
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
 )
 ZMK_BASE_LAYER(FN,
 //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-    ___            ___            ___            ___            ___            ___          ,         ___            ___            ___            ___            ___            ___          ,
+    ___            ___            MEH3           &kp LS(TAB)    &swapper       ___          ,         ___            ___            ___            ___            ___            ___          ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-    &LG(C)         MEH1            MEH4           MEH5           MEH6          MEH0         ,         &kp F1         &kp F2         &kp F3         &kp F4         &kp F5         &kp F11      ,
+    ___            MEH1           MEH4           MEH5           MEH6           MEH0         ,         &kp F1         &kp F2         &kp F3         &kp F4         &kp F5         &kp F11      ,
 //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-    &LG(V)         MEH2            MEH7           MEH8           MEH9          ___          ,         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10        &kp F12      ,
+    ___            MEH2           MEH7           MEH8           MEH9           ___          ,         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10        &kp F12      ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            XXX          ,         XXX            ___            ___
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
