@@ -127,7 +127,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define NAV_START &mt LC(HOME) HOME  // Tap: Start of line | Long-tap: start of doc.
 #define NAV_END   &mt LC(END)  END   // Tap: End of line   | Long-tap: end   of doc.
 
-// DisplayFusion Ctrl + Shift + Alt
+// MEH + NUM
 #define MEH0 &kp LC(LS(LA(N0)))
 #define MEH1 &kp LC(LS(LA(N1)))
 #define MEH2 &kp LC(LS(LA(N2)))
@@ -139,7 +139,21 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define MEH8 &kp LC(LS(LA(N8)))
 #define MEH9 &kp LC(LS(LA(N9)))
 
-/* Keymap */
+// HYR + NUM
+#define HYR0 &kp LC(LS(LA(LG(N0))))
+#define HYR1 &kp LC(LS(LA(LG(N1))))
+#define HYR2 &kp LC(LS(LA(LG(N2))))
+#define HYR3 &kp LC(LS(LA(LG(N3))))
+#define HYR4 &kp LC(LS(LA(LG(N4))))
+#define HYR5 &kp LC(LS(LA(LG(N5))))
+#define HYR6 &kp LC(LS(LA(LG(N6))))
+#define HYR7 &kp LC(LS(LA(LG(N7))))
+#define HYR8 &kp LC(LS(LA(LG(N8))))
+#define HYR9 &kp LC(LS(LA(LG(N9))))
+
+#define MEH_ENTER &mt LS(LC(LALT)) ENTER
+#define HYR_ESC   &mt LS(LC(LA(LGUI))) ESC
+/* Keymap */                                    
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
@@ -148,23 +162,23 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 ZMK_BASE_LAYER(Base,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp LA(SPACE)  &kp W          &kp L          &kp P          &kp B        ,         &kp SQT        &kp J          &kp K          &qexcl         &kp LC(SPACE),
+                   &kp BSPC       &kp W          &kp L          &kp P          &kp B        ,         &kp Z          &kp J          &kp K          &qexcl         &kp DQT      ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,         &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-    &kp TAB        &kp Q          &kp X          &kp M          &kp D          &kp V        ,         &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp LG(E)    ,
+    HYR_ESC        &kp Q          &kp X          &kp M          &kp D          &kp V        ,         &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp SQT      ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                 &kp ESC        &lt FN R       &lt NUM BSPC ,         &lt NAV SPACE  MAGIC_SHIFT    &kp ENTER
+                                                 &leader        &lt FN R       &lt NUM TAB ,         &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
 )
 
 ZMK_BASE_LAYER(Nav,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            &kp BSLH       ___            &kp FSLH       &kp TILDE    ,         &kp Z          &kp C_VOL_DN   &kp C_VOL_UP   &kp C_MUTE     ___          ,
+                   ___            ___            ___            ___            ___          ,         ___            &kp C_VOL_DN   &kp C_VOL_UP   ___            ___          ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-                    &kp EXCL      &kp AT         &kp HASH       &kp DLLR       &kp PRCNT    ,         &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      NAV_BSPC     ,
+                   &kp F1         &kp F2         &kp F3         &kp F4         &kp F5       ,         &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      NAV_BSPC     ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮ 
-    ___             &kp CARET     &kp AMPS       &kp STAR       &kp PIPE       ___          ,         &kp LT         &kp GT         &kp EQUAL      &kp PLUS       NAV_DEL        ___          ,
+    &kp LC(BSPC)   &kp F6         &kp F7         &kp F8         &kp F9         &kp F10      ,         ___            &kp LT         &kp GT         &kp EQUAL      NAV_DEL        ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            &mo SYS      ,         XXX            ___            ___
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
@@ -172,22 +186,22 @@ ZMK_BASE_LAYER(Nav,
 
 ZMK_BASE_LAYER(Num,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp EXCL       &kp AT         &kp LS(TAB)    &swapper       ___          ,         &kp EQUAL      &kp LBKT       &kp RBKT       &kp C_PREV     ___          ,
+                   ___            ___            &kp LS(TAB)    &swapper       ___          ,         ___            ___            ___            ___            ___          ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                   &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,         &kp MINUS      &kp LPAR       &kp RPAR       &kp C_PP       ___          ,
+                   &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,         &kp FSLH       &kp LPAR       &kp LBRC       &kp LBKT       &kp GRAVE    ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-    &kp ESC        &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,         &kp UNDER      &kp LBRC       &kp RBRC       &kp C_NEXT     ___            ___          ,
+    ___            &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,         &kp BSLH       &kp RPAR       &kp RBRC       &kp RBKT       &kp TILDE      ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            XXX          ,         ___            ___            ___
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
 )
 ZMK_BASE_LAYER(FN,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            MEH1           MEH2           MEH3           ___          ,         ___            ___            ___            &kp LA(F4)     ___         ,
+                   ___            MEH1           MEH2           MEH3           ___          ,         ___            ___            ___            ___             ___         ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                   ___            MEH4           MEH5           MEH6           MEH0         ,         &kp F1         &kp F2         &kp F3         &kp F4         &kp F5      ,
+                   ___            MEH4           MEH5           MEH6           MEH0         ,         HYR1           HYR2           HYR3           HYR4           HYR5         ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-    &kp Z          ___            MEH7           MEH8           MEH9           ___          ,         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10       ___          ,
+    ___            ___            MEH7           MEH8           MEH9           ___          ,         HYR6           HYR7           HYR8           HYR9           HYR0           ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            XXX          ,         ___            &kp F11        &kp F12
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
