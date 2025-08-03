@@ -140,7 +140,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define MEH9     &kp LC(LS(LA(N9)))
 #define MEHEX    &kp LC(LS(LA(EXCL)))
 #define MEHAT    &kp LC(LS(LA(AT)))
-#define MEHASH   &kp LC(LS(LA(HASH)))
+#define MEHHASH   &kp LC(LS(LA(HASH)))
 #define MEHDLLR  &kp LC(LS(LA(DLLR)))
 #define MEHPRCNT &kp LC(LS(LA(PRCNT)))
 
