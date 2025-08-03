@@ -128,16 +128,21 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define NAV_END   &mt LC(END)  END   // Tap: End of line   | Long-tap: end   of doc.
 
 // MEH + NUM
-#define MEH0 &kp LC(LS(LA(N0)))
-#define MEH1 &kp LC(LS(LA(N1)))
-#define MEH2 &kp LC(LS(LA(N2)))
-#define MEH3 &kp LC(LS(LA(N3)))
-#define MEH4 &kp LC(LS(LA(N4)))
-#define MEH5 &kp LC(LS(LA(N5)))
-#define MEH6 &kp LC(LS(LA(N6)))
-#define MEH7 &kp LC(LS(LA(N7)))
-#define MEH8 &kp LC(LS(LA(N8)))
-#define MEH9 &kp LC(LS(LA(N9)))
+#define MEH0     &kp LC(LS(LA(N0)))
+#define MEH1     &kp LC(LS(LA(N1)))
+#define MEH2     &kp LC(LS(LA(N2)))
+#define MEH3     &kp LC(LS(LA(N3)))
+#define MEH4     &kp LC(LS(LA(N4)))
+#define MEH5     &kp LC(LS(LA(N5)))
+#define MEH6     &kp LC(LS(LA(N6)))
+#define MEH7     &kp LC(LS(LA(N7)))
+#define MEH8     &kp LC(LS(LA(N8)))
+#define MEH9     &kp LC(LS(LA(N9)))
+#define MEHEX    &kp LC(LS(LA(EXCL)))
+#define MEHAT    &kp LC(LS(LA(AT)))
+#define MEHASH   &kp LC(LS(LA(HASH)))
+#define MEHDLLR  &kp LC(LS(LA(DLLR)))
+#define MEHPRCNT &kp LC(LS(LA(PRCNT)))
 
 // HYR + NUM
 #define HYR0 &kp LC(LS(LA(LG(N0))))
@@ -197,11 +202,11 @@ ZMK_BASE_LAYER(Num,
 )
 ZMK_BASE_LAYER(FN,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            MEH1           MEH2           MEH3           ___          ,         ___            ___            ___            ___             ___         ,
+                   MEHEX          MEHAT          MEHHASH        MEHDLLR        MEHPRCNT     ,         ___            ___            ___            ___             ___         ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                   ___            MEH4           MEH5           MEH6           MEH0         ,         HYR1           HYR2           HYR3           HYR4           HYR5         ,
+                   MEH1           MEH2           MEH3           MEH4           MEH5         ,         HYR1           HYR2           HYR3           HYR4           HYR5         ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-    ___            ___            MEH7           MEH8           MEH9           ___          ,         HYR6           HYR7           HYR8           HYR9           HYR0           ___          ,
+    ___            MEH6           MEH7           MEH8           MEH9           MEH0         ,         HYR6           HYR7           HYR8           HYR9           HYR0           ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            XXX          ,         ___            &kp F11        &kp F12
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
