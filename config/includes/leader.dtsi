@@ -15,18 +15,16 @@
     };
 
 /* Function Keys */
-ZMK_LEADER_SEQUENCE(f24,        &kp F24,        W)  
-ZMK_LEADER_SEQUENCE(f23,        &kp F23,        L)  
-ZMK_LEADER_SEQUENCE(f22,        &kp F22,        P) 
-ZMK_LEADER_SEQUENCE(f21,        &kp F21,        S)  
-ZMK_LEADER_SEQUENCE(f20,        &kp F20,        N)  
-ZMK_LEADER_SEQUENCE(f19,        &kp F19,        T)  
-ZMK_LEADER_SEQUENCE(f18,        &kp F18,        G)  
-ZMK_LEADER_SEQUENCE(f17,        &kp F17,        X)  
-ZMK_LEADER_SEQUENCE(f16,        &kp F16,        M)  
-ZMK_LEADER_SEQUENCE(f15,        &kp F15,        D)  
-ZMK_LEADER_SEQUENCE(f14,        &kp F14,        V) 
-ZMK_LEADER_SEQUENCE(f13,        &kp F13,        R) 
+ZMK_LEADER_SEQUENCE(MEH1,       MEH1,        C)
+ZMK_LEADER_SEQUENCE(MEH2,       MEH2,        S)
+ZMK_LEADER_SEQUENCE(MEH3,       MEH3,        N)
+ZMK_LEADER_SEQUENCE(MEH4,       MEH4,        T)
+ZMK_LEADER_SEQUENCE(MEH5,       MEH5,        G)
+ZMK_LEADER_SEQUENCE(MEH6,       MEH6,        Q)
+ZMK_LEADER_SEQUENCE(MEH7,       MEH7,        X)
+ZMK_LEADER_SEQUENCE(MEH8,       MEH8,        M)
+ZMK_LEADER_SEQUENCE(MEH9,       MEH9,        D)
+ZMK_LEADER_SEQUENCE(MEH0,       MEH0,        V)
 
 // BLE and USB
 #ifdef CONFIG_WIRELESS

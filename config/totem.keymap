@@ -106,11 +106,11 @@ ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
 // Tap: comma | Shift + tap: colon | Ctrl + shift + tap: <.
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp COLON)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp COLON, &kp LESS_THAN)
 
 // Tap: dot | Shift + tap: semicolon | Ctrl + shift + tap: >.
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp SEMICOLON)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp SEMICOLON, &kp GREATER_THAN)
 
 // Tap: qmark | Shift + tap: excl.
@@ -138,11 +138,6 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define MEH7     &kp LC(LS(LA(N7)))
 #define MEH8     &kp LC(LS(LA(N8)))
 #define MEH9     &kp LC(LS(LA(N9)))
-#define MEHEX    &kp LC(LS(LA(EXCL)))
-#define MEHAT    &kp LC(LS(LA(AT)))
-#define MEHHASH   &kp LC(LS(LA(HASH)))
-#define MEHDLLR  &kp LC(LS(LA(DLLR)))
-#define MEHPRCNT &kp LC(LS(LA(PRCNT)))
 
 // HYR + NUM
 #define HYR0 &kp LC(LS(LA(LG(N0))))
@@ -157,7 +152,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define HYR9 &kp LC(LS(LA(LG(N9))))
 
 #define MEH_ENTER &mt LS(LC(LALT)) ENTER
-#define HYR_ESC   &mt LS(LC(LA(LGUI))) ESC
+#define HYR_R &mt LS(LC(LA(LGUI))) R
 /* Keymap */                                    
 
 #ifndef ZMK_BASE_LAYER
@@ -167,22 +162,22 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 ZMK_BASE_LAYER(Base,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &leader        &kp W          &kp L          &kp P          &kp B        ,         &kp Z          &kp J          &kp K          &qexcl         &kp DQT      ,
+                   &smart_mouse   &kp W          &kp L          &kp P          &kp B        ,         &kp Z          &kp J          &kp K          &qexcl         &kp DQT      ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,         &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
      &kp TAB       &kp Q          &kp X          &kp M          &kp D          &kp V        ,         &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp SQT      ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                 HYR_ESC        &lt FN R       &lt NUM BSPC ,         &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
+                                                 &lt FN ESC     HYR_R          &lt NUM BSPC ,         &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯       ╰──────────────┴──────────────┴──────────────╯
 )
 
 ZMK_BASE_LAYER(Nav,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                    ___            ___            ___            ___            ___          ,         ___            &kp C_VOL_DN   &kp C_VOL_UP   ___            ___          ,
-               //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
+               //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &kp F1         &kp F2         &kp F3         &kp F4         &kp F5       ,         &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      NAV_BSPC     ,
-//╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮ 
+//╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
     &kp LC(BSPC)   &kp F6         &kp F7         &kp F8         &kp F9         &kp F10      ,         ___            &kp LT         &kp GT         &kp EQUAL      NAV_DEL        ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  ___            ___            &mo SYS      ,         XXX            ___            ___
@@ -202,7 +197,7 @@ ZMK_BASE_LAYER(Num,
 )
 ZMK_BASE_LAYER(FN,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   MEHEX          MEHAT          MEHHASH        MEHDLLR        MEHPRCNT     ,         ___            ___            ___            ___             ___         ,
+                   ___            ___             ___           ___            __           ,         ___            ___            ___            ___             ___         ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    MEH1           MEH2           MEH3           MEH4           MEH5         ,         HYR1           HYR2           HYR3           HYR4           HYR5         ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
