@@ -48,8 +48,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 
 /* Combos, mouse emulation */
-#include "includes/combos.dtsi"
 #include "includes/mouse.dtsi"
+#include "includes/combos.dtsi"
 #include "includes/leader.dtsi"
 
 // Trigger tap-action on all interrupts.
