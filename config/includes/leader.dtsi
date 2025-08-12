@@ -13,6 +13,16 @@
             }; \
         }; \
     };
+#define MEH0     &kp LC(LS(LA(N0)))
+#define MEH1     &kp LC(LS(LA(N1)))
+#define MEH2     &kp LC(LS(LA(N2)))
+#define MEH3     &kp LC(LS(LA(N3)))
+#define MEH4     &kp LC(LS(LA(N4)))
+#define MEH5     &kp LC(LS(LA(N5)))
+#define MEH6     &kp LC(LS(LA(N6)))
+#define MEH7     &kp LC(LS(LA(N7)))
+#define MEH8     &kp LC(LS(LA(N8)))
+#define MEH9     &kp LC(LS(LA(N9)))
 
 /* Function Keys */
 ZMK_LEADER_SEQUENCE(MEH_1,       MEH1,        C)
