@@ -1,15 +1,16 @@
 /*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+* Copyright (c) 2022 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &default_layout;
     };
 
     default_transform: keymap_transform_0 {
@@ -28,9 +29,8 @@
         >;
     };
 
-
     kscan0: kscan_0 {
-        compatible = "zmk,kscan-gpio-matrix"; wakeup-source;
+        compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         
         diode-direction = "col2row"; 
@@ -41,4 +41,4 @@
             , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-};
+ };
