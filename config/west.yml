@@ -19,7 +19,7 @@ manifest:
       import: app/west.yml
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: main
+      revision: 147c340c6e8d377304acfdd64dc86cf83ebdfef2
     - name: zmk-auto-layer
       remote: urob
       revision: main
