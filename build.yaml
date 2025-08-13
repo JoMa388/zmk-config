@@ -1,11 +1,14 @@
 include:
   - board: seeeduino_xiao_ble
     shield: totem_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: split-dongle-left
   - board: seeeduino_xiao_ble
     shield: totem_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: split-dongle-left
   - board: seeeduino_xiao_ble
-    shield: totem_dongle prospector_adapter
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    shield: totem_dongle dongle-screen
+    artifact-name: totem-dongle-screen
   - board: seeeduino_xiao_ble
     shield: settings_reset
