@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/dhruvinsh
     - name: JoMa388
       url-base: https://github.com/JoMa388
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: urob
@@ -31,5 +33,8 @@ manifest:
     - name: zmk-leader-key
       remote: urob
       revision: v0.2
+    - name: prospector-zmk-module
+      remote: carrefinho 
+      revision: main
   self:
     path: config
