@@ -14,7 +14,7 @@ manifest:
       url-base: https://github.com/JoMa388
   projects:
     - name: zmk
-      remote: main
+      remote: zmkfirmware
       revision: 147c340c6e8d377304acfdd64dc86cf83ebdfef2
       import: app/west.yml
     - name: zmk-dongle-screen
