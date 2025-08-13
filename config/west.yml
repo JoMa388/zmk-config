@@ -2,34 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
-    - name: dhruvinsh
-      url-base: https://github.com/dhruvinsh
-    - name: JoMa388
-      url-base: https://github.com/JoMa388
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
-      remote: urob
-      revision: v0.2+fix-child-nodes
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
-    - name: zmk-auto-layer
-      remote: urob
+    - name: prospector-zmk-module
+      remote: carrefinho
       revision: main
-    - name: zmk-tri-state
-      remote: dhruvinsh
-      revision: main
-    - name: zmk-adaptive-key
-      remote: urob
-      revision: main
-    - name: zmk-fork
-      remote: JoMa388
-      revision: main
-    - name: zmk-helpers
-      remote: urob
-      revision: main
-    - name: zmk-leader-key
-      remote: urob
-      revision: v0.2
   self:
     path: config
