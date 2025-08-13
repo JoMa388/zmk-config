@@ -37,6 +37,6 @@ manifest:
       revision: main
     - name: zmk-leader-key
       remote: urob
-      revision: main
+      revision: legacy
   self:
     path: config
