@@ -1,0 +1,45 @@
+#undef ZMK_LEADER_SEQUENCE
+#define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
+    / { \
+        behaviors { \
+            leader: leader { \
+                compatible = "zmk,behavior-leader-key"; \
+                #binding-cells = <0>; \
+                ignore-keys = <LSHFT RSHFT>; \
+                leader_sequence_ ## name { \
+                    bindings = <leader_bindings>; \
+                    sequence = <leader_sequence>; \
+                }; \
+            }; \
+        }; \
+    };
+#define MEH0     &kp LC(LS(LA(N0)))
+#define MEH1     &kp LC(LS(LA(N1)))
+#define MEH2     &kp LC(LS(LA(N2)))
+#define MEH3     &kp LC(LS(LA(N3)))
+#define MEH4     &kp LC(LS(LA(N4)))
+#define MEH5     &kp LC(LS(LA(N5)))
+#define MEH6     &kp LC(LS(LA(N6)))
+#define MEH7     &kp LC(LS(LA(N7)))
+#define MEH8     &kp LC(LS(LA(N8)))
+#define MEH9     &kp LC(LS(LA(N9)))
+
+/* Function Keys */
+ZMK_LEADER_SEQUENCE(MEH_1,       MEH1,        C)
+ZMK_LEADER_SEQUENCE(MEH_2,       MEH2,        S)
+ZMK_LEADER_SEQUENCE(MEH_3,       MEH3,        N)
+ZMK_LEADER_SEQUENCE(MEH_4,       MEH4,        T)
+ZMK_LEADER_SEQUENCE(MEH_5,       MEH5,        G)
+ZMK_LEADER_SEQUENCE(MEH_6,       MEH6,        Q)
+ZMK_LEADER_SEQUENCE(MEH_7,       MEH7,        X)
+ZMK_LEADER_SEQUENCE(MEH_8,       MEH8,        M)
+ZMK_LEADER_SEQUENCE(MEH_9,       MEH9,        D)
+ZMK_LEADER_SEQUENCE(MEH_0,       MEH0,        V)
+
+// BLE and USB
+#ifdef CONFIG_WIRELESS
+ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
+ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
+#endif // CONFIG_WIRELESS
+ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
+ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
