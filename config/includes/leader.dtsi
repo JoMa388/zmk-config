@@ -36,6 +36,9 @@ ZMK_LEADER_SEQUENCE(MEH_8,       MEH8,        M)
 ZMK_LEADER_SEQUENCE(MEH_9,       MEH9,        D)
 ZMK_LEADER_SEQUENCE(MEH_0,       MEH0,        V)
 
+ZMK_LEADER_SEQUENCE(SLEEP,       &kp C_POWER,        Z Z Z)
+ZMK_LEADER_SEQUENCE(SLEEP_TEST,       &kp C_SLEEP,        Q Q Q)
+
 // BLE and USB
 #ifdef CONFIG_WIRELESS
 ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
