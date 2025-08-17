@@ -50,7 +50,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 /* Combos, mouse emulation */
 #include "includes/mouse.dtsi"
 #include "includes/combos.dtsi"
-// #include "includes/leader.dtsi"
+#include "includes/leader.dtsi"
 
 // Trigger tap-action on all interrupts.
 #define MT_CORE                                                                \
@@ -153,9 +153,6 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 #define MEH_ENTER &mt LS(LC(LALT)) ENTER
 #define HYR_R &mt LS(LC(LA(LGUI))) R
-
-#define LINE_START &kp LC(LA(HOME))
-#define LINE_END &kp LC(LA(HOME))
 /* Keymap */                                    
 
 #ifndef ZMK_BASE_LAYER
@@ -189,7 +186,7 @@ ZMK_BASE_LAYER(Nav,
 
 ZMK_BASE_LAYER(Num,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮       ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            ___            &kp LS(TAB)    &swapper       LINE_START   ,         LINE_END       &kp GRAVE      &kp TILDE      ___            ___          ,
+                   ___            ___            &kp LS(TAB)    &swapper       ___          ,         ___            ___            ___            ___            ___          ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &kp N1         &kp N2         &kp N3         &kp N4         &kp N5       ,         &kp FSLH       &kp LPAR       &kp LBRC       &kp LBKT       &kp GRAVE    ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤       ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
