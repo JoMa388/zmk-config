@@ -119,6 +119,9 @@ SIMPLE_MORPH(lparlbrc, SFT, &kp LPAR, &kp LBRC)
 // Tap: rpar | Shift + tap: rbrc.
 SIMPLE_MORPH(rparrbrc, SFT, &kp RPAR, &kp RBRC)
 
+// Tap: fslh | Shift + tap: bslh.
+SIMPLE_MORPH(fslhbslh, SFT, &kp FSLH, &kp BSLH)
+
 // Tap: left/right parenthesis | Shft + tap: less-than/greater-than.
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
@@ -163,7 +166,7 @@ ZMK_BASE_LAYER(Base,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp COLON     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp SEMI     ,
+     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp COLON    ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
