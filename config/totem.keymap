@@ -114,12 +114,6 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 
-// Tap: lpar | Shift + tap: lbrc.
-SIMPLE_MORPH(lparlbrc, SFT, &kp LPAR, &kp LBRC)
-
-// Tap: rpar | Shift + tap: rbrc.
-SIMPLE_MORPH(rparrbrc, SFT, &kp RPAR, &kp RBRC)
-
 // Tap: fslh | Shift + tap: bslh.
 SIMPLE_MORPH(fslhbslh, SFT, &kp FSLH, &kp BSLH)
 
@@ -161,7 +155,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
       ZMK_LAYER(name, LT RT LM RM LB RB LH RH)
 #endif
 
-ZMK_BASE_LAYER(Base,
+ZMK_BASE_LAYER(Win,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                    &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &kp SQT        &kp J          &kp K          &kp Z          &tog MAC     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
@@ -175,7 +169,7 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Mac,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &kp SQT        &kp J          &kp K          &kp Z          &tog WIN     ,
+                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &kp SQT        &kp J          &kp K          &kp Z          &tog MAC     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
