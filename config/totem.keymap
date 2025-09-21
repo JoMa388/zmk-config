@@ -104,7 +104,6 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
 ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
-
 // Tap: comma | Shift + tap: semicolon.
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMI)
 
@@ -120,6 +119,17 @@ SIMPLE_MORPH(fslhbslh, SFT, &kp FSLH, &kp BSLH)
 // Tap: left/right parenthesis | Shft + tap: less-than/greater-than.
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
+
+ZMK_MACRO(tog_mac, 
+    wait-ms = <100>;
+    tap-ms  = <5>;
+    bindings = <&tog MAC &bt BT_SEL 1>;
+)
+ZMK_MACRO(tog_win, 
+    wait-ms = <100>;
+    tap-ms  = <5>;
+    bindings = <&tog MAC &bt BT_SEL 0>;
+)
 
 // MEH + NUM
 #define MEH0     &kp LC(LS(LA(N0)))
@@ -217,9 +227,9 @@ ZMK_BASE_LAYER(Func,
 
 ZMK_BASE_LAYER(Sys,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            ___            ___            ___            &bootloader  ,    &bootloader    ___            ___            ___            &bt BT_CLR   ,
+                   ___            ___            &bt BT_SEL 1   &bt BT_SEL 0   &bootloader  ,    &bootloader    ___            ___            ___            &bt BT_CLR   ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  
-                   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &out OUT_TOG ,    ___            &tog MAC       ___            ___            ___          ,
+                   &bt BT_SEL 3   &bt BT_SEL 2   &tog_mac       &tog_win       &out OUT_TOG ,    ___            &tog MAC       ___            ___            ___          ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮ 
     ___            ___            ___            ___            ___            ___          ,    ___            ___            ___            ___            ___            ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
