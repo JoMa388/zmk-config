@@ -130,6 +130,11 @@ ZMK_MACRO(tog_win,
     tap-ms  = <5>;
     bindings = <&tog MAC &bt BT_SEL 0>;
 )
+ZMK_MACRO(tog_out, 
+    wait-ms = <100>;
+    tap-ms  = <5>;
+    bindings = <&tog MAC &out OUT_TOG> ;
+)
 
 // MEH + NUM
 #define MEH0     &kp LC(LS(LA(N0)))
