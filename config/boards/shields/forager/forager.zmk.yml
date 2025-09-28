@@ -1,11 +1,11 @@
 file_format: "1"
-id: catpucciano
-name: catpucciano
+id: forager
+name: forager
 type: shield
 url: https://github.com/JoMa388
 requires: [seeeduino_xiao_ble]
 features:
   - keys
 siblings:
-  - catpucciano_left
-  - catpucciano_right
+  - forager_left
+  - forager_right

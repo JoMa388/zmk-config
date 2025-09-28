@@ -1,17 +1,17 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_CATPUCCIANO_LEFT
+if SHIELD_FORAGER_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "CATPUCCIANO"
+    default "FORAGER"
     
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_CATPUCCIANO_LEFT || SHIELD_CATPUCCIANO_RIGHT
+if SHIELD_FORAGER_LEFT || SHIELD_FORAGER_RIGHT
 
 config ZMK_SPLIT
     default y

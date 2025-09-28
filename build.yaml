@@ -1,5 +1,7 @@
 include:
   - board: seeeduino_xiao_ble
-    shield: catpucciano_left
+    shield: forager_left
   - board: seeeduino_xiao_ble
-    shield: catpucciano_right
+    shield: forager_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset

@@ -4,7 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "catpucciano.dtsi"
+#include "forager.dtsi"
+
+&default_transform {
+  col-offset = <5>;
+};
 
 &kscan0 {
     col-gpios
