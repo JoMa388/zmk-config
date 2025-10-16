@@ -92,7 +92,7 @@ ZMK_ADAPTIVE_KEY(
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions =
-        <LT1 LT2 LT3 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3 LH0 LH1 RT3>;
+        <LT1 LT2 LT3 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3 LH0 LH1 RT3 RH1 RH2>;
     ignored-layers = <MOUSE NAV>;)
 
 // Alt+Tab swapper, requires tri-state module.
@@ -116,8 +116,7 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 
 // Tap: fslh | Shift + tap: bslh.
-SIMPLE_MORPH(lpar_lbkt, SFT, &kp LPAR, &kp LBKT)
-SIMPLE_MORPH(rpar_rbkt, SFT, &kp RPAR, &kp RBKT)
+SIMPLE_MORPH(fslh_bslh, SFT, &kp FSLH, &kp BSLH)
 
 // Tap: left/right parenthesis | Shft + tap: less-than/greater-than.
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
@@ -171,11 +170,11 @@ ZMK_MACRO(tog_win,
  
 ZMK_BASE_LAYER(Win,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp Z          &kp BSPC     ,
+                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp SQT        &kp BSPC     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &qexcl         &kp COLON    ,
+     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &qexcl         &kp U          &kp O          &kp Y          &kp Z          &kp COLON    ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
@@ -183,11 +182,11 @@ ZMK_BASE_LAYER(Win,
 
 ZMK_BASE_LAYER(Mac,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp Z          &kp BSPC     ,
+                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp SQT        &kp BSPC     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &qexcl         &kp COLON    ,
+     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &qexcl         &kp U          &kp O          &kp Y          &kp Z          &kp COLON    ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
