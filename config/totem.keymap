@@ -99,6 +99,7 @@ ZMK_TRI_STATE(
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 LT1>;)
 
+// CTRL+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(browse, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
               ignored-key-positions = <LT1 LT0>;)
 
@@ -170,11 +171,11 @@ ZMK_MACRO(tog_win,
  
 ZMK_BASE_LAYER(Win,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp SQT        &kp BSPC     ,
+                   &kp TAB        &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp SQT        &kp DEL      ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &qexcl         &kp U          &kp O          &kp Y          &kp Z          &kp COLON    ,
+     &kp ENTER     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &kp Z          &kp BSPC     ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
@@ -182,11 +183,11 @@ ZMK_BASE_LAYER(Win,
 
 ZMK_BASE_LAYER(Mac,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp ENTER      &kp W          &kp L          &kp P          &kp B        ,    &dot_morph     &kp J          &kp K          &kp SQT        &kp BSPC     ,
+                   &kp COLON      &kp W          &kp L          &kp P          &kp B        ,    &kp TAB        &kp J          &kp K          &kp SQT        &kp SEMI     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp SEMI      &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &qexcl         &kp U          &kp O          &kp Y          &kp Z          &kp COLON    ,
+     &kp ENTER     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &kp Z          &kp BSPC     ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
