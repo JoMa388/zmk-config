@@ -2,9 +2,10 @@
 ZMK config for my ergonomic keyboards. It focuses around my custom keyboard the catpucciano with a 34 key layout 
 
 <p align="center">
-  <img src="assests/catpucciano/new/IMG_8434.png" width="45%" />
-  <img src="assests/catpucciano/new/IMG_8432.png" width="45%" />
+  <img src="assets/catpucciano/new/IMG_8434.png" width="45%" />
+  <img src="assets/catpucciano/new/IMG_8432.png" width="45%" />
 </p>
+
 ## Keymap 
 - Incorporates many features from [urob's config](https://github.com/urob/zmk-config)
     - Timeless Homerow Mods
