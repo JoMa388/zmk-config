@@ -1,10 +1,8 @@
 #  ZMK config
 ZMK config for my ergonomic keyboards. It focuses around my custom keyboard the catpucciano with a 34 key layout 
 
-<p align="center">
-  <img src="assets/catpucciano/new/IMG_8434.jpg" width="45%" />
-  <img src="assets/catpucciano/new/IMG_8432.jpg" width="45%" />
-</p>
+![](assets/catpucciano/new/IMG_8434.jpg)
+![](assets/catpucciano/new/IMG_8432.jpg)
 
 ## Keymap 
 - Incorporates many features from [urob's config](https://github.com/urob/zmk-config)
