@@ -1,0 +1,277 @@
+layout: {zmk_keyboard: catpucciano}
+layers:
+  Base:
+  - W
+  - L
+  - P
+  - B
+  - Tab
+  - J
+  - K
+  - ''''
+  - {t: C, h: LGUI}
+  - {t: S, h: LALT}
+  - {t: N, h: LCTRL}
+  - {t: T, h: LSHFT}
+  - G
+  - F
+  - {t: A, h: RSHFT}
+  - {t: E, h: RCTRL}
+  - {t: I, h: RALT}
+  - {t: H, h: RGUI}
+  - TAB
+  - X
+  - M
+  - D
+  - V
+  - ', ;'
+  - U
+  - O
+  - Y
+  - Z
+  - ESC
+  - {t: R, h: 'FN'}
+  - {t: BSPC, h: 'Num'}
+  - {t: SPACE, h: 'Nav'}
+  - Magic Shift
+  - ENTER
+  Nav:
+  - ''
+  - ''
+  - F11
+  - F12
+  - ''
+  - VOL DN
+  - Pause Play
+  - VOL UP
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: BSPC, h: Ctl+BSPC}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - DEL
+  - {type: held}
+  - ''
+  - ''
+  Num:
+  - ''
+  - Sft + TAB
+  - Alt + Tab
+  - Ctrl + Tab
+  - ''
+  - ''
+  - ''
+  - ''
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - ''
+  - J
+  - K
+  - ''
+  - ''
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  Fn:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Meh1
+  - Meh2
+  - Meh3
+  - Meh4
+  - Meh5
+  - HYR1
+  - HYR2
+  - HYR3
+  - HYR4
+  - HYR5
+  - Meh6
+  - Meh7
+  - Meh8
+  - Meh9
+  - Meh0
+  - HYR6
+  - HYR7
+  - HYR8
+  - HYR9
+  - HYR0
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  SYS:
+  - ''
+  - {t: BT, h: '2'}
+  - {t: BT, h: '1'}
+  - Boot
+  - Boot
+  - ''
+  - ''
+  - BT CLR
+  - {t: BT, h: '4'}
+  - {t: BT, h: '3'}
+  - Toggle Mac
+  - Toggle Win
+  - {t: BT, h: '0'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - {type: held}
+  - ''
+  Mouse:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SCRL LEFT
+  - Mouse LEFT
+  - Mouse UP
+  - Mouse Right
+  - SCRL RIGHT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Right Click
+  - Mouse Down
+  - Left Click
+  - Middle Click
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SCRL DN
+  - SCRL UP
+  - ''
+  - ''
+  - ''
+combos:
+- p: [11, 12]
+  k: '-'
+- p: [19, 20]
+  k: Cut
+- p: [21, 22] 
+  k: Paste
+- p: [20, 21]
+  k: Copy
+- p: [10, 11]
+  k: Undo
+- p: [9, 10]
+  k: Redo
+- p: [0, 9]
+  k: '%'
+- p: [1, 10]
+  k: '+'
+- p: [2, 11]
+  k: '='
+- p: [3, 12]
+  k: '*'
+- p: [4, 13]
+  k: '|'
+- p: [5, 14]
+  k: '['
+- p: [6, 15]
+  k: ']'
+- p: [7, 16]
+  k: '&'
+- p: [9, 19]
+  k: '^'
+- p: [10, 20]
+  k: '#'
+- p: [11, 21]
+  k: '? !'
+- p: [12, 22]
+  k: '_'
+- p: [13, 23]
+  k: '@'
+- p: [14, 24]
+  k: '( <'
+- p: [15, 25]
+  k: ') >'
+- p: [16, 26]
+  k: '/ \'
+- p: [13, 14]
+  k: '`'
+- p: [14, 15]
+  k: '"'
+- p: [15, 16]
+  k: ''''
+- p: [23, 24]
+  k: '$'
+- p: [24, 25]
+  k: '{'
+- p: [25, 26]
+  k: '}'
+- p: [28, 29]
+  k: Spotlight
+- p: [29, 30]
+  k: Tab
+- p: [31, 32]
+  k: '.'
+- p: [32, 33]
+  k: Smart Mouse
