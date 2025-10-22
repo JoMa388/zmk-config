@@ -48,6 +48,8 @@ ZMK_COMBO(ndllr,       &kp DLLR,       RM2 RB2,    NUM			  , COMBO_TERM_SLOW, CO
 ZMK_COMBO(nprcnt,      &kp PRCNT,      RM3 RB3,    NUM			  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Horizontal  Left    */ 
+ZMK_COMBO(q,		   &kp Q,		   LT1 LT0,    WIN MAC NAV NUM,	COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(z,		   &kp Z,		   RT0 RT1,    WIN MAC NAV NUM,	COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(win_undo,    &kp LC(Z),      LM3 LM2,    WIN ,			COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(mac_undo,    &kp LG(Z),      LM3 LM2,    MAC ,			COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(mac_copy,    &kp LG(C),      LM2 LM1,    MAC ,		    COMBO_TERM_FAST, COMBO_IDLE_FAST)
