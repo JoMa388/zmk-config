@@ -97,11 +97,11 @@ ZMK_TRI_STATE(
 
 // Alt+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-              ignored-key-positions = <LM2 LM1>;)
+              ignored-key-positions = <LT2 LT1>;)
 
 // CTRL+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(browse, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-              ignored-key-positions = <LM1 LM0>;)
+              ignored-key-positions = <LT1 LT0>;)
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -176,11 +176,11 @@ ZMK_MACRO(email,
  
 ZMK_BASE_LAYER(Win,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp TAB        &kp W          &kp L          &kp P          &kp B        ,    &kp Z          &dot_morph     &kp J          &kp SQT        &kp DEL      ,
+                   &kp TAB        &kp W          &kp L          &kp P          &kp B        ,    &kp Z          &kp J          &kp K          &kp SQT        &kp DEL      ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp ENTER     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &kp K          &kp BSPC     ,
+     &kp ENTER     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp BSPC     ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
@@ -188,11 +188,11 @@ ZMK_BASE_LAYER(Win,
 
 ZMK_BASE_LAYER(Mac,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   &kp COLON      &kp W          &kp L          &kp P          &kp B        ,    &kp Z          &dot_morph     &kp J          &kp SQT        &kp SEMI     ,
+                   &kp COLON      &kp W          &kp L          &kp P          &kp B        ,    &kp Z          &kp J          &kp K          &kp SQT        &kp SEMI     ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                    &hml LGUI C    &hml LALT S    &hml LCTRL N   &hml LSHFT T   &kp G        ,    &kp F          &hmr RSHFT A   &hmr RCTRL E   &hmr RALT I    &hmr RGUI H  ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-     &kp ENTER     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &kp K          &kp BSPC     ,
+     &kp ENTER     &kp Q          &kp X          &kp M          &kp D          &kp V        ,    &comma_morph   &kp U          &kp O          &kp Y          &dot_morph     &kp BSPC     ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
                                                  &lt FUNC ESC   HYR_R          &lt NUM BSPC ,    &lt NAV SPACE  MAGIC_SHIFT    MEH_ENTER
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
@@ -200,13 +200,13 @@ ZMK_BASE_LAYER(Mac,
 
 ZMK_BASE_LAYER(Num,
 //               ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮  ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                   ___            &email         ___            ___            ___          ,    ___            &kp N7         &kp N8         &kp N9         ___          ,
+                   ___            &email         &kp LS(TAB)    &swapper       &browse      ,    ___            &kp N7         &kp N8         &kp N9         ___          ,
                //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                   ___            &kp TAB        &kp LS(TAB)    &swapper       &browse      ,    &kp K          &kp N4         &kp N5         &kp N6         ___          ,
+                   &hml LGUI N5   &hml LALT N4   &hml LCTRL N3  &hml LSHFT N2  &kp N1       ,    &kp K          &kp N4         &kp N5         &kp N6         ___          ,
 //╭──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────╮
-    &kp ENTER      ___            ___            ___            ___            ___          ,    &kp J          &kp N1         &kp N2         &kp N3         &dot_morph     ___          ,
+    &kp ENTER      &kp N6         &kp N7         &kp N8         &kp N9         &kp N0       ,    &kp J          &kp N1         &kp N2         &kp N3         &dot_morph     ___          ,
 //╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤  ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                 ___            ___            ___          ,    &kp N0         &kp DLLR       ___
+                                                 ___            ___            XXX          ,    &kp N0         &kp DLLR       ___
 //                                             ╰──────────────┴──────────────┴──────────────╯  ╰──────────────┴──────────────┴──────────────╯
 )
 
