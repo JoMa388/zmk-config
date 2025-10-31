@@ -8,6 +8,20 @@
             ╰────────────┴────────────╯                        ╰──────────────┴─────────────╯
 */
 
+/*         Vertical Combos                                      
+ ╭────────────────┬─────────────────╮         
+ │ @  +   =   %   │  |   $   ?   &  │ 
+ │ #  *       ^   │  \   (   )   /  │        
+ ╰────────────────┴─────────────────╯       
+ 
+			 
+ ╭────────────────┬─────────────────╮         
+ │ none  none     │                 │        
+ │ Undo  Copy  -  │  `  ''   " "    │        
+ │ Redo	 Paste TAB│  _	[      ]    │  
+ ╰────────────────┴─────────────────╯       
+*/
+
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
 
@@ -19,21 +33,20 @@ ZMK_COMBO(at,          &kp AT,         LT3 LM3,    WIN MAC NAV    , COMBO_TERM_S
 ZMK_COMBO(plus,        &kp PLUS,       LT2 LM2,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(equal,       &kp EQUAL,      LT1 LM1,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(prcnt,       &kp PRCNT,	   LT0 LM0,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(caret,       &kp CARET,      RT0 RM0,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(pipe,        &kp PIPE,       RT0 RM0,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(dllr,        &kp DLLR,       RT1 RM1,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(qexcl,       &qexcl,         RT2 RM2,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(amps,        &kp AMPS,       RT3 RM3,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Vertical Middle,     */
-ZMK_COMBO(bslh,        &kp BSLH,       LM3 LB3,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(hash,        &kp HASH,       LM3 LB3,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(star,        &kp STAR,       LM2 LB2,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(fslh,        &kp FSLH,	   LM1 LB1,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(colon,       &kp COLON,	   LM0 LB0,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(semi,        &kp SEMI,       RM0 RB0,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(tsqt,        &kp SQT,	       LM1 LB1,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(caret,       &kp CARET,	   LM0 LB0,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(bslh,        &kp BSLH,       RM0 RB0,    WIN MAC NAV	  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(lparlt,	   &lpar_lt,       RM1 RB1,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(rpargt,      &rpar_gt,       RM2 RB2,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(pipe,        &kp PIPE,       RM3 RB3,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
+ZMK_COMBO(fslh,        &kp FSLH,       RM3 RB3,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Horizontal  Left    */ 
 ZMK_COMBO(win_undo,    &kp LC(Z),      LM3 LM2,    WIN ,			COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -45,34 +58,31 @@ ZMK_COMBO(win_redo,    &kp LC(Y),      LB3 LB2,    WIN ,			COMBO_TERM_FAST, COMB
 ZMK_COMBO(mac_redo,    &kp LG(Y),      LB3 LB2,    MAC ,			COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(win_paste,   &kp LS(INS),    LB2 LB1,    WIN ,	        COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(mac_paste,   &kp LG(V),      LB2 LB1,    MAC,	            COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(tab,         &kp TAB,        LB1 LB0,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Horizontal  Right   */
 ZMK_COMBO(grave,       &kp GRAVE,      RM0 RM1,    WIN MAC NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(hash,	       &kp HASH,       RM1 RM2,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(rm23,        &trans,         RM2 RM3,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(sqt,	       &kp SQT,        RM1 RM2,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(dqt,         &kp DQT,        RM2 RM3,    WIN MAC NAV    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(under,       &kp UNDER,      RB0 RB1,    WIN MAC NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(lbkt,        &kp LBKT,       RB1 RB2,    WIN MAC NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(rbkt,        &kp RBKT,       RB2 RB3,    WIN MAC NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Thumb combos */  
 ZMK_COMBO(flow,		   &kp LG(SPACE),  LH2 LH1,    WIN MAC NAV	  ,	COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(tab,         &kp TAB,        LH1 LH0,    WIN MAC NAV    ,	COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(dot,         &kp DOT,       RH0 RH1,    WIN MAC NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(dot,         &dot_morph,     LH1 LH0,    WIN MAC NAV    ,	COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(ttab,        &kp TAB,        RH0 RH1,    WIN MAC NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(tsmouse,     &smart_mouse,   RH1 RH2,    WIN MAC NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Num Layer */
-/* Vertical Top */
-ZMK_COMBO(lg3,         &kp LG(N3),     LT3 LM3,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(lg2,         &kp LG(N2),     LT2 LM2,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(lg1,         &kp LG(N1),     LT1 LM1,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lgs3,        &kp LG(LS(N3)), LT3 LM3,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lgs2,        &kp LG(LS(N2)), LT2 LM2,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lgs1,        &kp LG(LS(N1)), LT1 LM1,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lg3,         &kp LG(N3),     LM3 LB3,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lg2,         &kp LG(N2),     LM2 LB2,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lg1,         &kp LG(N1),     LM1 LB1,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(nlt0,        &trans,         LT0 LM0,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(nrt0,        &trans,         RT0 RM0,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(lgs1,        &kp LG(LS(N1)), RT1 RM1,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(lgs2,        &kp LG(LS(N2)), RT2 RM2,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(lgs3,        &kp LG(LS(N3)), RT3 RM3,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(mk5,         &mkp MB5,       LM3 LB3,    NUM			  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(mk4,         &mkp MB4,       LM2 LB2,    NUM			  , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(mk3,         &mkp MB3,       LM1 LB1,    NUM  	      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
