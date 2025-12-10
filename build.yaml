@@ -1,5 +1,5 @@
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: catpucciano_left
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: catpucciano_right
