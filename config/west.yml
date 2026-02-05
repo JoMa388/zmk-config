@@ -19,24 +19,24 @@ manifest:
       import: app/west.yml
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: v0.3
+      revision: main
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.3
+      revision: main
     - name: zmk-tri-state
       remote: dhruvinsh
       revision: main
     - name: zmk-adaptive-key
       remote: urob
-      revision: v0.3
+      revision: main
     - name: zmk-fork
       remote: JoMa388
-      revision: v0.3
+      revision: main
     - name: zmk-helpers
       remote: urob
       revision: v0.3
     - name: zmk-leader-key
       remote: urob
-      revision: v0.3
+      revision: main
   self:
     path: config
