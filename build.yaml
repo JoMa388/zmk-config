@@ -12,5 +12,5 @@ include:
     cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
     snippet: zmk-usb-logging
     artifact-name: totem-dongle-screen
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
