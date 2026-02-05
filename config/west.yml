@@ -15,28 +15,28 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3
       import: app/west.yml
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: main
+      revision: v0.3
     - name: zmk-auto-layer
       remote: urob
-      revision: main
+      revision: v0.3
     - name: zmk-tri-state
       remote: dhruvinsh
       revision: main
     - name: zmk-adaptive-key
       remote: urob
-      revision: main
+      revision: v0.3
     - name: zmk-fork
       remote: JoMa388
-      revision: main
+      revision: v0.3
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: v0.3
     - name: zmk-leader-key
       remote: urob
-      revision: main
+      revision: v0.3
   self:
     path: config

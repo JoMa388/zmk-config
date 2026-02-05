@@ -1,16 +1,17 @@
 include:
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: totem_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: split-dongle-left
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble 
     shield: totem_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: split-dongle-right
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: totem_dongle dongle_screen
     cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
     snippet: zmk-usb-logging
     artifact-name: totem-dongle-screen
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: settings_reset
+
