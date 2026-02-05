@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/JoMa388
   projects:
     - name: zmk
-      remote: urob
-      revision: v0.2+fix-child-nodes
+      remote: zmkfirmware
+      revision: v0.3
       import: app/west.yml
     - name: zmk-auto-layer
       remote: urob
@@ -27,9 +27,6 @@ manifest:
       revision: main
     - name: zmk-helpers
       remote: urob
-      revision: main
-    - name: zmk-leader-key
-      remote: urob
-      revision: v0.2
+      revision: v0.3
   self:
     path: config
